@@ -6,6 +6,6 @@ public class SumOfSquares {
         for (int i = 1; i <= 100; i++) {
             sum = sum + (i * i);
         }
-        System.out.println("Sum of squares is:"+sum);
+        System.out.println("Sum of squares is:" + sum);
     }
 }

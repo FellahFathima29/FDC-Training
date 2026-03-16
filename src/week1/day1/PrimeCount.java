@@ -15,23 +15,14 @@ public class PrimeCount {
     public static int countPrimes(int n) {
         int count = 0;
         for (int i = 1; i <= n; i++) {
-            if (isPrime(i)) {
+            if (PrimeCheck.isPrime(i)) {
                 count++;
             }
         }
         return count;
     }
+}
 
-    public static boolean isPrime(int no) {
-        if (no <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= no / 2; i++) {
-            if (no % i == 0)
-                return false;
-            }
-            return true;
-        }
-    }
+
 
 
