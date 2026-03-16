@@ -1,0 +1,539 @@
+                                                                                                                                                               API TEST CASE DESIGN EXERCISE,,,,,,
+Task 1: User Registration API,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify username with length
+4 characters","1.Enter username with 
+4 characters",abcd,Should accept the username,Username accepted,
+TC_002,"Verify username with length
+20 characters","1.Enter username with 
+20 characters",,Should accept the username,Username accepted,
+TC_003,Verify unique username,1.Enter a unique username,abcdfhu,Should accept the username,Username accepted,
+TC_004,Verify blank username,"1.Leave username empty
+and submit",,"Error message should be
+displayed",Error message displayed,
+TC_005,Verify valid email,1.Enter email and submit,abcd@gmail.com,Should accept the email,Emailid accepted,
+TC_006,"Verify password with less than
+8 characters",1.Enter password and submit,sdvg23,"Error message should be
+displayed",Error message displayed,
+TC_007,Verify empty password,"1.Leave password field empty
+and submit",,"Error message should be
+displayed",Error message displayed,
+TC_008,Verify email without @,1.Enter email without @ and submit,avcdgmail.com,"Error message should be
+displayed",Error message displayed,
+TC_009,Verify email without username,1.Enter email without username and submit,,"Error message should be
+displayed",Error message displayed,
+TC_010,"Verify password with length
+7 characters","1.Enter password with length
+7 characters and submit",iutwe23,"Error message should be
+displayed",Error message displayed,
+TC_011,"Verify password with length
+greater than 8 characters","1.Enter password with length
+greater than 8 characters and submit",iuthnbvf567,Should accept the password,Password accepted,
+TC_012,"Verify username with length
+3 characters","1.Enter username with length
+3 characters and submit",bfr,"Error message should be
+displayed",Error message displayed,
+TC_013,"Verify username with length
+21 characters","1.Enter username with length
+21 characters and submit",,"Error message should be
+displayed",Error message displayed,
+,,,,,,
+Task 2: Login API,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify login with valid credentials,"1.Enter the username and password
+2.Click on login",,Should login with valid credentials,Logged in succesfully,
+TC_002,Verify login with invalid password,"1.Enter a valid username and invalid
+password
+2.Click on login",,"Error message should be
+displayed",Error message displayed,
+TC_003,Verify login with invalid username,"1.Enter a invalid username and valid
+password
+2.Click on login",,"Error message should be
+displayed",Error message displayed,
+TC_004,Verify login with both fields invalid,"1.Enter a invalid username and
+password
+2.Click on login",,"Error message should be
+displayed",Error message displayed,
+TC_005,Verify login with username empty,"1.Keep  username empty and enter password
+2.Click on login",,"Error message should be
+displayed",Error message displayed,
+TC_006,Verify login with password empty,"1.Enter username and keep password
+empty
+2.Click on login",,"Error message should be
+displayed",Error message displayed,
+TC_007,"Verify login with both fields
+empty","1.Keep both username and password
+empty.
+2.Click on login",,"Error message should be
+displayed",Error message displayed,
+TC_008,Verify security masking,"1.Enter the password
+2.Check if the password is masked while
+entering",,Password should be masked,Password is masked,
+TC_009,"Verify if account gets locked
+after mutiple failed attempts","1.Enter the username and password
+2.Click on login
+3.Try multiple times with incorrect credentials",,"Error message should be
+displayed",Error message displayed,
+TC_010,Verify session timeout,"1.Enter the username and password
+2.Click on login
+3.Verify session timeout occurs immediately
+after entering otp",,"Session timeout should occur
+immediately after entering otp","Session timeout occurs
+immediately after entering otp",
+,,,,,,
+Task 3: Product Search,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify search with valid product
+name","1.Login
+2.Search with valid product name and wait
+for the results",,"Results of search product should
+be displayed",Results of search product is displayed,
+TC_002,"Verify search with partial product
+name","1.Login
+2.Search with partial product name and wait
+for the results",,,,
+TC_003,"Verify search with special
+characters",1.Search with special characters,,"Error message should be
+displayed",Error message displayed,
+TC_004,Verify search with empty field,1.Search with empty field,,"Error message should be
+displayed",Error message displayed,
+TC_005,Verify filter by price range,"1.Filter the price range either from low
+to high or high to low",,"Results of search product
+with applied price range should
+be displayed","Results of search product
+with applied price range is displayed",
+TC_006,Verify filter by maximum price range,1.Filter the price range to maximum,,,,
+TC_007,Verify search with valid keyword,,,,,
+TC_008,Verify search suggestion,,,,,
+TC_009,Verify search with long input,1.Enter a long input to search,,"Error message should be
+displayed",Error message displayed,
+TC_010,Verify search with random string,1.Search with a random string,,"Error message should be
+displayed",Error message displayed,
+TC_011,"Verify search for unavailable
+products",1.Search for unavailable products,,"Error message should be
+displayed",Error message displayed,
+,,,,,,
+,,,,,,
+Task 4: Create Order,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify order creation with 
+valid credentials","1.Enter order id and order details
+2.Click on create order",,Order should be created,Order is created,
+TC_002,"Verify order creation with 
+minimum valid quantity","1.Enter order id and order details
+2.Click on create order
+3.Set a minimum order quantity",,Order should be created,Order is created,
+TC_003,"Verify order creation with 
+maximum allowed quantity","1.Enter order id and order details
+2.Click on create order
+3.Set a maximum order quantity",,Order should be created,Order is created,
+TC_004,Verify order with zero quantity,"1.Enter order id and order details
+2.Click on create order by not adding anything
+",,"Error message should be
+displayed",Error message displayed,
+TC_005,Verify order with negative quantity,,,"Error message should be
+displayed",Error message displayed,
+TC_006,Verify order with large quantity,,,"Error message should be
+displayed",Error message displayed,
+TC_007,"Verify order with non-existent
+user id","1.Enter a non-existent user id
+2.Click on order",,"Error message should be
+displayed",Error message displayed,
+TC_008,"Verify order with non-existent
+product id","1.Enter a non-existent product id
+2.Click on order",,"Error message should be
+displayed",Error message displayed,
+TC_009,"Verify order with non-existent
+user id and product id","1.Enter a non-existent user and product id
+2.Click on order",,"Error message should be
+displayed",Error message displayed,
+TC_010,Verify duplicate order request,1.Enter same product and try to order,,"Error message should be
+displayed",Error message displayed,
+TC_011,"Verify repeated API request 
+due to network issue","1.Enter API request and test repeatedly
+due to network issues",,"Error message should be
+displayed",Error message displayed,
+,,,,,,
+Task 5: Delete User,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify deletion with valid userid,1.Enter a valid userid and click on delete,,"User with valid userid should
+be deleted",User with valid userid is deleted,
+TC_002,"Verify deletion of an active existing
+user",1.Enter an existing user id and delete,,"User with valid userid should
+be deleted",User with valid userid is deleted,
+TC_003,"Verify deletion of non-existing
+user",1.Enter a non existing user and click on delete,,"Error message should be
+displayed",Error message displayed,
+TC_004,"Verify deletion of already
+deleted user","1.Enter a userid that has been deleted
+and click on delete",,"Error message should be
+displayed",Error message displayed,
+TC_005,Verify deletion with large ID,1.Enter a large  userid and delete,,"Error message should be
+displayed",Error message displayed,
+TC_006,Verify deletion with empty ID,1.Keep the userid empty and delete,,"Error message should be
+displayed",Error message displayed,
+TC_007,"Verify deletion with alphabetic
+ID",,,"Error message should be
+displayed",Error message displayed,
+TC_008,Verify repeated deletion requests,1.Keep on deleting requests,,"Error message should be
+displayed",Error message displayed,
+,,,,,,
+,                                                                                                                                 API TESTING WITH DATABASE VALIDATION,,,,,
+Task 1: Create User,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify account retrieval with
+valid user ID",1.Enter a valid userid and try retrieving account,,"Account should be retrieved
+using valid userid","Account is retrieved
+using valid userid",
+TC_002,"Verify account retrieval with
+valid email id",1.Enter a valid emailid and try retrieving account,,"Account should be retrieved
+using valid emailid","Account is retrieved
+using valid emailid",
+TC_003,"Verify account retrieval with
+valid username",,,,,
+TC_004,Verify with empty input,,,,,
+TC_005,Verify with large username,,,,,
+TC_006,"Verify with username as
+special characters",,,,,
+TC_007,"Verify how system behaves
+after session timeout","1.Enter valid credentials and retrieve the account
+2.Check if session timeout happens in between",,"System must logout after session
+timeout","System logout after session
+timeout",
+TC_008,"Verify how system behaves
+if update comes in between",,,,,
+,,,,,,
+Task 2: Order Placement,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify order creation with
+valid items","1.Enter credentials
+2.Create order with valid items",,"Order should be created
+with valid items","Order should be created
+with valid items",
+TC_002,"Verify order creation with
+single item","1.Enter credentials
+2.Create order with single item",,"Order should be created
+with single item","Order is created
+with single item",
+TC_003,"Verify  order creation with
+zero quantity","1.Enter credentials
+2.Create order with zero item",,"Error message should be
+displayed","Error message
+displayed",
+TC_004,"Verify  order creation with
+negative quantity",,,"Error message should be
+displayed","Error message
+displayed",
+TC_005,Verify if order exceeds stock,"1.Create order
+2.Check what happens if order exceeds stock",,"Error message should be
+displayed","Error message
+displayed",
+TC_006,Verify if its out of stock,,,"Error message should be
+displayed","Error message
+displayed",
+TC_007,Verify succesful payment,"1.Create order
+2.Make the payment successfully",,"Payment should be 
+succesfully done","Payment is
+succesfully done",
+TC_008,"Verify stock after order
+cancelation","1.Create order
+2.Cancel the order and check it is successfully
+removed",,"Stock should be updated after
+order cancelation","Stock is updated after
+order cancelation",
+TC_009,"Verify maximum items per
+order","1.Create order
+2.There should be a maximum order quantity",,"There should be a maximum
+order quantity","There is a maximum
+order quantity",
+TC_010,"Verify minimum items per
+order",,,,,
+TC_011,Verify failed payment,,,"Error message should be
+displayed","Error message
+displayed",
+,,,,,,
+Task 3: Update User Emails,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify that an existing record
+can be updated correctly","1.Check for the record
+2.Update some values in record",,"Existing record should be
+updated correctly","Existing record is
+updated correctly",
+TC_002,"Verify that multiple updates
+do not create duplicate
+records","1.Update an existing record, make updations again
+3.Check it does not create any duplicate record",,"Multiple updates should not
+create duplicate records","Multiple updates did not
+create duplicate records",
+TC_003,"Verify duplicate records
+based on unique mail are
+prevented",,,,,
+,,,,,,
+Task 4: Delete Product,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify deletion of existing
+user",,,,,
+TC_002,"Verify deletion of non-existing
+user",,,,,
+TC_003,Verify deletion of invalid ID,,,,,
+TC_004,"Verify session expiry during
+deletion",,,,,
+,,,,,,
+Task 5: Password Reset,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify valid token creation,1.Create a token with valid credentials,,Token should be created,Token is created,
+TC_002,"Verify token creation with
+invalid ID",1.Create a token with invalid id,,"Error message should be
+displayed","Error message
+displayed",
+TC_003,"Verify if token is valid before
+expiry","1.Create a token and confirm it is valid before
+expiry",,Token should be valid,Token is valid,
+TC_004,Verify is token expired,,,,,
+TC_005,Verify if token can be reused,,,,,
+TC_006,"Verify maximum token
+length",,,,,
+,,,,,,
+                                                                                                                                                                                      BUG DISCOVERY EXERCISE,,,,,,
+Task 1:Account Details,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify with valid account
+number",1.Enter valid account number and retrieve,,"Account should be retrieved
+with valid account number","Account is retrieved
+with valid account number",
+TC_002,"Verify with invalid account
+number",1.Enter invalid account number and retrieve,,"Account should not be retrieved
+with invalid account number","Account is not retrieved
+with invalid account number",
+TC_003,"Verify with account number
+as empty",1.Keep account number empty and retrieve,,"Error message should be
+displayed","Error message 
+displayed",
+TC_004,"Verify with long account
+number",,,,,
+TC_005,Verify retrieval after update,,,,,
+TC_006,Verify with valid email id,,,,,
+TC_007,Verify with invalid email id,,,,,
+TC_008,Verify with valid username,,,,,
+,,,,,,
+Task 2:Money Transfer,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if the account number
+is correct",1.Enter the account number correctly,,"Amount should be transferred
+if account number is correct","Amount is transferred
+if account number is correct",
+TC_002,"Verify if transfer occurs to
+same account",1.Enter amount transfer occurs to the same account,,"Error message should be
+displayed","Error message is
+displayed",
+TC_003,Verify zero amount transfer,1.Enter the amount as 0 and try for amount transfer,,"Error message should be
+displayed","Error message is
+displayed",
+TC_004,Verify negative amount transfer,,,,,
+TC_005,Verify transfer of large amount,,,,,
+TC_006,"Verify non-numeric amount
+transfer",,,,,
+TC_007,"Verify with insufficient
+balance","1.Try if amount transfer with insufficient balance
+is possible",,"Error message should be
+displayed","Error message is
+displayed",
+TC_008,"Verify transfer amount above
+limit",1.Enter an amount above limit and see what happens,,"Error message should be
+displayed","Error message is
+displayed",
+,,,,,,
+Task 3: File Upload,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify upload with valid format,1.Upload a file with valid format,,,,
+TC_002,Verify upload with invalid format,1.Upload a file with invalid format,,"Error message should be
+displayed","Error message is
+displayed",
+TC_003,Verify empty file upload,1.Try to upload an empty file,,"Error message should be
+displayed","Error message is
+displayed",
+TC_004,"Verify file upload exceeding
+limit",1.Upload a file exceeding the limit,,"Error message should be
+displayed","Error message is
+displayed",
+TC_005,"Verify file upload with invalid
+content",1.Upload a file with invalid content,,"Error message should be
+displayed","Error message is
+displayed",
+TC_006,Verify large file upload,1.Upload a very large file,,"Error message should be
+displayed","Error message is
+displayed",
+,,,,,,
+Task 4:Pagination API,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify there are no duplicate records across pages,"1.Navigate to different pages
+2.Confirm there are no duplicate records",,"Should not be any duplicate
+record across pages","No duplicate
+record across pages",
+TC_002,Verify retrieval of first page,1.Verify the first page returns the correct records,,First page should returns correct records,First page returns correct records,
+TC_003,Verify retrieval of middle page,1.Try retrieving middle page in between other page,,,,
+TC_004,Verify retrieval of last page,1.Go to last page and check its behavior,,,,
+TC_005,Verify next page navigation from last page,"1.Navigate to last page
+2.Click on Next",,"Error message should be
+displayed","Error message 
+displayed",
+TC_006,Verify previous page navigation from first page,"1.Navigate to page1
+2.Click on Previous",,"Error message should be
+displayed","Error message 
+displayed",
+TC_007,"Verify no missing record 
+across pages","1.Navigate to different pages
+2.Confirm there are no missing records",,,,
+,,,,,,
+Task 5: Session Timeout,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if session is active
+within 15 minutes","1.Enter the credentials and check if the session
+is active within 15 minutes",,"Session should not be active
+for 15 minutes","Session is active
+for 15 minutes",
+TC_002,"Verify if session is inactive
+for 15 minutes","1.Enter the credentials and check if the session
+is inactive for 15 minutes",,"Session should not be inactive
+for 15 minutes","Session is not inactive
+for 15 minutes",
+TC_003,"Verify if session expires after
+15 minutes",,,,,
+TC_004,Verify at 14:59 minutes,,,,,
+TC_005,Verify session refresh,1.Enter the credentials and refresh the session,,Session should be refreshed,Session is refreshed,
+,,,,,,
+                                                                                                                                                                                     TEST CASE REVIEW EXERCISE,,,,,,
+Task 1: Login Test Case Review ,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify login with valid username
+and password",,,,,
+TC_002,"Verify login with valid username
+and invalid password",,,,,
+TC_003,"Verify login with invalid username
+and valid password",,,,,
+TC_004,Verify login with empty fields,,,,,
+,,,,,,
+ Task 2: Add Product Review,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if product can be added
+with mandatory fields",,,,,
+TC_002,"Verify if product can be added
+with missing mandatory fields",,,,,
+TC_003,"Verify if product is added after
+new product listing",,,,,
+,,,,,,
+Task 3:Delete Order Review,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if the deleted product
+still exists in the list",,,,,
+TC_002,Verify deletion of a particular product,,,,,
+TC_003,"Verify that order is not deleted
+if the user cancels the operation",,,,,
+TC_004,"Verify how the system behaves
+when you are trying to delete
+a non-existing order",,,,,
+,,,,,,
+Task 4: Password Change Review,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify old password does not
+work no longer",,,,,
+TC_002,"Verify login is possible with 
+new password",,,,,
+TC_003,"Verify system shows error
+message when incorrect password
+is entered",,,,,
+TC_004,"Verify system validates password
+confirmation",,,,,
+TC_005,Verify password strength,,,,,
+,,,,,,
+Task 5: Search Function Review,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify if search button is working ,,,,,
+TC_002,"Verify if searching a product
+gives accurate results",,,,,
+TC_003,"Verify search functionality with
+partial product name",,,,,
+TC_004,"Verify how system behaves when
+product does not exist",,,,,
+TC_005,"Verify how system behaves when 
+search field is empty",,,,,
+,,,,,,
+                                                                                                                                                                   EDGE CASE IDENTIFICATION EXERCISE,,,,,,
+Task 1: Payment API,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify amount as 0,1. Enter the amount as 0 and see what happens ,,"Error message should be
+displayed","Error message is
+displayed",
+TC_002,Verify amount as 0.1,1. Enter the amount as 0.1 and see what happens ,,"Error message should be
+displayed","Error message is
+displayed",
+TC_003,"Verify with extremely large
+amount","1. Enter a large quantity amount and see 
+what happens ",,"Error message should be
+displayed","Error message is
+displayed",
+TC_004,"Verify with amount just above
+0","1. Enter the amount greater than 0 and see
+ what happens ",,Amount should be paid,Amount is paid,
+TC_005,"Verify with only one decimal
+place",,,"Error message should be
+displayed","Error message should be
+displayed",
+TC_006,"Verify with more than one
+decimal place",,,"Error message should be
+displayed","Error message is
+displayed",
+,,,,,,
+Task 2: Username Field,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,Verify if username if of 3 characters,,,,,
+TC_002,Verify if username if of 4 characters,,,,,
+TC_003,Verify if username if of 5 characters,,,,,
+TC_004,Verify if username if of 19 characters,,,,,
+TC_005,Verify if username if of 20 characters,,,,,
+TC_006,Verify if username if of 21 characters,,,,,
+TC_007,Verify username as blank,,,,,
+TC_008,"Verify username with mixed
+cases",,,,,
+TC_009,Verify username with numbers,,,,,
+TC_010,Verify username with space,,,,,
+,,,,,,
+Task 3: File Upload,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if user can upload file
+of size 5MB",,,,,
+TC_002,"Verify if user can upload file
+of size geater than 5MB",,,,,
+TC_003,"Verify if user can upload file
+of size less than 5MB",,,,,
+TC_004,"Verify if user can upload a 
+large file",,,,,
+TC_005,"Verify how file upload happens
+when there is network issue",,,,,
+TC_006,"Verify file upload with invalid
+format",,,,,
+TC_007,"Verify file upload with space
+in between file name",,,,,
+,,,,,,
+Task 4: Pagination Parameters,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if all the arrows are
+clickable",,,,,
+TC_002,Verify the minimum valid page,,, ,,
+TC_003,Verify the minimum size,,,,,
+TC_004,Verify the maximum size,,,,,
+TC_005,"Verify for a very large page
+number",,,,,
+TC_006,"Verify for missing page
+parameter",,,,,
+TC_007,Verify for missing size,,,,,
+TC_008,"Verify for both parameters
+missing",,,,,
+TC_009,Verify for a very large size,,,,,
+,,,,,,
+Task 5: Order Quantity,,,,,,
+Test ID,Test Description,Test Procedure,Test Data,Expected Result, Actual Result,Status
+TC_001,"Verify if order duplication
+occurs when you add only once",,,,,
+TC_002,Verify with empty input,,,,,
+TC_003,Verify with large order quantity,,,,,
