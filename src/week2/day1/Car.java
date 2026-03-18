@@ -8,7 +8,7 @@ public class Car extends Vehicle {
 
     void startEngine() {
         System.out.println("Car engine started! " + fuelType +
-                " is at " + fuelPercentage() +
+                " is at " + fuelPercentage() + " % " +
                 " . With current amount of fuel, maximum distance achievable is "
                 + maxDistance() + " . " );
     }

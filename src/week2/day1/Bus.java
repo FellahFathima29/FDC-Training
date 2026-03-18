@@ -11,10 +11,10 @@ public class Bus extends Vehicle{
     @Override
 
     void startEngine() {
-        System.out.println("Bus engine started! " + " Maximum seating capacity is " + seats + fuelType +
-                " is at " + fuelPercentage() +
-                " With current amount of fuel, maximum distance achievable is "
-                + maxDistance());
+        System.out.println("Bus engine started! " + " Maximum seating capacity is " + seats + "." + fuelType +
+                " is at " + fuelPercentage() + " % "
+              + " . With current amount of fuel, maximum distance achievable is "
+                + maxDistance() + " . ");
     }
     @Override
     public void stopEngine() {

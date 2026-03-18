@@ -7,9 +7,9 @@ public class Bike extends Vehicle {
 
     @Override
     public void startEngine() {
-        System.out.println("Bike engine started! " + fuelType + " is at " + fuelPercentage() +
-                " With current amount of fuel, maximum distance achievable is "
-                + maxDistance());
+        System.out.println("Bike engine started! " + fuelType + " is at " + fuelPercentage() + " % " +
+                " . With current amount of fuel, maximum distance achievable is "
+                + maxDistance() + " . ");
 
     }
 

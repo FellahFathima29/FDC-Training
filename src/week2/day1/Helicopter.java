@@ -10,18 +10,18 @@ public class Helicopter extends Vehicle implements Aircraft {
     @Override
     public void startEngine() {
 
-        System.out.println("Helicopter engine started!Please check helipad before takeoff. " + fuelType + " is at " + fuelPercentage() +
-                " With current amount of fuel, maximum distance achievable is " + maxDistance());
+        System.out.println("Helicopter engine started!Please check helipad before takeoff. " + fuelType + " is at " + fuelPercentage() + " % " +
+                " . With current amount of fuel, maximum distance achievable is " + maxDistance() + " . ");
 
     }
-
+    @Override
+    public void fly() {
+        System.out.println("Helicopter starts flying");
+    }
     @Override
     public void stopEngine() {
         System.out.println("Engine stopped");
     }
 
-    @Override
-    public void fly() {
 
-    }
 }

@@ -25,35 +25,41 @@ public class Main {
 //}
 
         if (type.equals("Car")) {
-            Car car = new Car(VehicleType.LMV, FuelType.PETROL, 15, 45, 87);
+            Car car = new Car(VehicleType.LMV, FuelType.PETROL, 15, 87, 45);
             car.printDetails();
             car.startEngine();
             car.stopEngine();
         } else if (type.equals("Bike")) {
-            Bike bike = new Bike(VehicleType.LMV, FuelType.PETROL, 40, 16, 95);
+            Bike bike = new Bike(VehicleType.LMV, FuelType.PETROL, 40, 95, 35);
             bike.printDetails();
             bike.startEngine();
             bike.stopEngine();
         } else if (type.equals("Bus")) {
-            Bus bus = new Bus(VehicleType.HMV, FuelType.DIESEL, 5, 20, 56, 87);
+            Bus bus = new Bus(VehicleType.HMV, FuelType.DIESEL, 5, 56, 20, 87);
             bus.printDetails();
             bus.startEngine();
             bus.stopEngine();
         } else if (type.equals("Boat")) {
-            Boat boat = new Boat(VehicleType.HMV, FuelType.DIESEL, 15, 47, 68, 90);
+            Boat boat = new Boat(VehicleType.HMV, FuelType.DIESEL, 15, 68, 34, 90);
             boat.printDetails();
             boat.startEngine();
+            boat.sail();
             boat.stopEngine();
+
         } else if (type.equals("Aeroplane")) {
             Aeroplane aeroplane = new Aeroplane(VehicleType.OTHERS, FuelType.JETFUEL, 2500, 5679, 8900, 1678);
             aeroplane.printDetails();
             aeroplane.startEngine();
+            aeroplane.fly();
             aeroplane.stopEngine();
+
         } else if (type.equals("Helicopter")) {
             Helicopter helicopter = new Helicopter(VehicleType.OTHERS, FuelType.JETFUEL, 5000, 8000, 1500);
             helicopter.printDetails();
             helicopter.startEngine();
+            helicopter.fly();
             helicopter.stopEngine();
+
         }
     }
 }
