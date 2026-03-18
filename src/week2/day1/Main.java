@@ -5,25 +5,8 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter type of vehicle");
+        System.out.println("Enter the type of vehicle");
         String type = sc.nextLine();
-//        System.out.println("Enter mileage:");
-//        double mileage = sc.nextDouble();
-//
-//        System.out.println("Enter tank capacity:");
-//        double capacity = sc.nextDouble();
-//
-//        System.out.println("Enter current fuel:");
-//        double currentFuel = sc.nextDouble();
-//
-//        Car car = new Car(VehicleType.LMV, FuelType.PETROL, mileage, capacity, currentFuel);
-//
-//        car.printDetails();
-//        car.startEngine();
-//        car.stopEngine();
-//    }
-//}
-
         if (type.equals("Car")) {
             Car car = new Car(VehicleType.LMV, FuelType.PETROL, 15, 87, 45);
             car.printDetails();
@@ -47,14 +30,14 @@ public class Main {
             boat.stopEngine();
 
         } else if (type.equals("Aeroplane")) {
-            Aeroplane aeroplane = new Aeroplane(VehicleType.OTHERS, FuelType.JETFUEL, 2500, 5679, 8900, 1678);
+            Aeroplane aeroplane = new Aeroplane(VehicleType.OTHERS, FuelType.JETFUEL, 2500, 8900, 5679, 1678);
             aeroplane.printDetails();
             aeroplane.startEngine();
             aeroplane.fly();
             aeroplane.stopEngine();
 
         } else if (type.equals("Helicopter")) {
-            Helicopter helicopter = new Helicopter(VehicleType.OTHERS, FuelType.JETFUEL, 5000, 8000, 1500);
+            Helicopter helicopter = new Helicopter(VehicleType.OTHERS, FuelType.JETFUEL, 5000, 1500, 8000);
             helicopter.printDetails();
             helicopter.startEngine();
             helicopter.fly();
