@@ -6,12 +6,12 @@ public class NetBanking extends Payment{
     }
 
 
-    public void refund(int amount) {
+    public void print(int amount) {
         System.out.println("Payment receipt generated for amount:"+amount);
     }
 
 
-    public void print(int amount) {
+    public void refund(int amount) {
         System.out.println("Refunded "+amount+" using Net Banking");
     }
 }
