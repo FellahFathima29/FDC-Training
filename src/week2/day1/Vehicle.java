@@ -2,6 +2,7 @@ package week2.day1;
 
 public abstract class Vehicle {
 
+
     VehicleType vehicleType;
     FuelType fuelType;
     double mileage;
@@ -21,7 +22,7 @@ public abstract class Vehicle {
         System.out.println("Fuel Type: " + fuelType);
         System.out.println("Mileage: " + mileage + " km/L");
         System.out.println("Fuel Tank Capacity: " + tankCapacity);
-        System.out.println("Current Fuel Level: " + currentFuel + " L ");
+        System.out.println("Current Fuel Level: " + currentFuel);
     }
 
     double maxDistance() {
@@ -37,4 +38,10 @@ public abstract class Vehicle {
     abstract void stopEngine();
 }
 
+interface Seacraft {
+    void sail();
+}
 
+interface Aircraft {
+    void fly();
+}

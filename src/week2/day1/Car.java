@@ -6,15 +6,13 @@ public class Car extends Vehicle {
         super(vehicleType, fuelType, mileage, tankCapacity, currentFuel);
     }
 
-    @Override
     void startEngine() {
         System.out.println("Car engine started! " + fuelType +
                 " is at " + fuelPercentage() + " % " +
                 " . With current amount of fuel, maximum distance achievable is "
-                + maxDistance() + " . ");
+                + maxDistance() + " . " );
     }
 
-    @Override
     void stopEngine() {
         System.out.println("Engine stopped");
     }
