@@ -15,13 +15,13 @@ public class PasswordValidationTest {
 
     @Test
     void testShortPassword() {
-        InvalidPasswordException e = assertThrows(InvalidPasswordException.class, () -> PasswordValidation.validatePassword("xyz23"));
+        InvalidPasswordException e = assertThrows(InvalidPasswordException.class, () -> PasswordValidation.validatePassword("abc23"));
         assertEquals("Password length must not be less than 8", e.getMessage());
     }
 
     @Test
     void testPasswordNoDigit() {
-        InvalidPasswordException e = assertThrows(InvalidPasswordException.class, () -> PasswordValidation.validatePassword("abcyzghjko"));
+        InvalidPasswordException e = assertThrows(InvalidPasswordException.class, () -> PasswordValidation.validatePassword("mjikolpedfo"));
         assertEquals("Password must contain at least one digit", e.getMessage());
     }
 }
